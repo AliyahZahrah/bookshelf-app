@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FDF0E0;
+    color: #161179;
+    display: block;
+}
+
+/* Header Styles */
+header {
+    background-color: #0C0950;
+    color: #FBE4D6;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Main Styles */
+main {
+    max-width: 600px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 16px;
+}
+
+.input_section, .search_section, .book_shelf {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.input_section h2, .search_section h2, .book_shelf h2 {
+    text-align: center;
+    color: #0008C1;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+label {
+    font-weight: bold;
+    color: #2146C7;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px; 
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #04009A;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #2146C7;
+}
+
+button#bookFormSubmit {
+    font-weight: 500;
+    gap: 5px;
+}
+
+button span {
+    font-weight: bolder;
+}
+
+button ion-icon {
+    font-size: 20px; 
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center; 
+}
+
+.checkbox-container label {
+    font-size: 16px; 
+    line-height: 1; 
+}
+
+.checkbox-container input {
+    width: auto;
+    height: 16px; 
+    margin-left: 8px;
+    transform: translateY(3px); 
+}
+
+.search_section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search_section label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.search_section div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#searchBookTitle {
+    flex-grow: 1;
+}
+
+#searchSubmit {
+    flex-shrink: 0; 
+    width: auto; 
+    white-space: nowrap;
+    transform: translateY(-8px); 
+}
+
+.book_shelf h2 {
+    font-size: 18px;
+    border-bottom: 2px solid #0008C1;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#incompleteBookList, #completeBookList {
+    padding: 10px;
+}
+
+[data-testid="bookItem"] {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #3EDBF0;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-testid="bookItem"] h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #04009A;
+}
+
+[data-testid="bookItem"] p {
+    font-size: 14px;
+    color: #77ACF1;
+}
+
+[data-testid="bookItem"] div {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+[data-testid="bookItem"] button {
+    flex-grow: 1;
+    font-size: 12px;
+    padding: 8px;
+}
+
+[data-testid="bookItem"] button ion-icon {
+    font-size: 16px;
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px;
+    color: #FBE4D6;
+    background-color: #0C0950;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsiveness Styles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    header img {
+        width: 70px;
+        height: 70px;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    .search_section div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #searchSubmit {
+        width: 100%;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
