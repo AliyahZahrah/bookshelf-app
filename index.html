@@ -19,8 +19,9 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
 
-    <!-- Lampirkan `defer` jika pemanggilan dilakukan dalam <head>
-    <script defer src="main.js"></script> -->
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   </head>
   
   <body>
@@ -37,15 +38,15 @@
         <form id="bookForm" data-testid="bookForm">
           <div>
             <label for="bookFormTitle">Judul</label>
-            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" aria-label="Book title" />
           </div>
           <div>
             <label for="bookFormAuthor">Penulis</label>
-            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" aria-label="Book author" />
           </div>
           <div>
             <label for="bookFormYear">Tahun</label>
-            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" aria-label="Book publication year" />
           </div>
           <div class="checkbox-container">
             <label for="bookFormIsComplete">Selesai dibaca</label>
@@ -53,9 +54,10 @@
               id="bookFormIsComplete"
               type="checkbox"
               data-testid="bookFormIsCompleteCheckbox"
+              aria-label="Mark if book is finished reading"
             />
           </div>
-          <button id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">
+          <button id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton" aria-label="Add book to shelf">
             <ion-icon name="bookmark-outline"></ion-icon> Masukkan Buku ke rak <span>Belum Selesai Dibaca</span>
           </button>
         </form>
@@ -67,8 +69,8 @@
         <form id="searchBook" data-testid="searchBookForm">
             <label for="searchBookTitle">Judul</label>
             <div>
-                <input id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput" />
-                <button id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton">
+                <input id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput" aria-label="Search book by title" />
+                <button id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton" aria-label="Submit search query">
                     <ion-icon name="search-outline"></ion-icon> Cari
                 </button>
             </div>
@@ -80,20 +82,7 @@
         <h2>Belum Selesai Dibaca</h2>
 
         <div id="incompleteBookList" data-testid="incompleteBookList">
-          <!-- 
-            Ini adalah struktur HTML untuk masing-masing buku.
-            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
-          -->
-          <div data-bookid="123123123" data-testid="bookItem">
-            <h3 data-testid="bookItemTitle">Judul Buku 1</h3>
-            <p data-testid="bookItemAuthor">Penulis: Penulis Buku 1</p>
-            <p data-testid="bookItemYear">Tahun: 2030</p>
-            <div>
-              <button data-testid="bookItemIsCompleteButton"> <ion-icon name="checkmark"></ion-icon> Selesai dibaca</button>
-              <button data-testid="bookItemDeleteButton"> <ion-icon name="trash-outline"></ion-icon> Hapus Buku</button>
-              <button data-testid="bookItemEditButton"> <ion-icon name="pencil-outline"></ion-icon> Edit Buku</button>
-            </div>
-          </div>
+          <!-- Books will be dynamically inserted here by JavaScript -->
         </div>
       </section>
 
@@ -102,20 +91,7 @@
         <h2>Selesai Dibaca</h2>
 
         <div id="completeBookList" data-testid="completeBookList">
-          <!-- 
-            Ini adalah struktur HTML untuk masing-masing buku.
-            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
-          -->
-          <div data-bookid="456456456" data-testid="bookItem">
-            <h3 data-testid="bookItemTitle">Judul Buku 2</h3>
-            <p data-testid="bookItemAuthor">Penulis: Penulis Buku 2</p>
-            <p data-testid="bookItemYear">Tahun: 2030</p>
-            <div>
-              <button data-testid="bookItemIsCompleteButton"> <ion-icon name="close-outline"></ion-icon> Belum selesai dibaca</button>
-              <button data-testid="bookItemDeleteButton"> <ion-icon name="trash-outline"></ion-icon> Hapus Buku</button>
-              <button data-testid="bookItemEditButton"> <ion-icon name="pencil-outline"></ion-icon> Edit Buku</button>
-            </div>
-          </div>
+          <!-- Books will be dynamically inserted here by JavaScript -->
         </div>
       </section>
     </main>
